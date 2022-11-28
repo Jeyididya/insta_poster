@@ -1,4 +1,4 @@
 from instagrapi import Client
 cl = Client()
-cl.login("quotewithpicturesdaily", "0113470047j")
+cl.login("yididya051#gmail.com", "0113470047j")
 print("successfully logged in")
