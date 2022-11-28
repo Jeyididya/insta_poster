@@ -2,6 +2,10 @@ from get_quotes import *
 from get_image import *
 from edit_photo import *
 
+import os
+
+for di,fil,picture in os.walk("."):
+        print(picture)
 from instagram_api import *
 import textwrap
 from time import sleep
@@ -43,8 +47,7 @@ times=[10,13,11,6,]
 import os
 
 while True:
-    for di,fil,picture in os.walk("."):
-        print(picture)
+    
     filename=start()
 
     if filename!=None:
