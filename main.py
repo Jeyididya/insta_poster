@@ -54,7 +54,10 @@ words=["friend","car","alone","lonely","sad","wealth"]
 #     sleep(int(sleep_time)*3600)
 
 get_image=GET_IMAGE()
+import os
+os.mkdir("downloads")
+
 print("-->GOT",get_image.search_image("friends"))
 
-import os
+
 print(os.listdir("."))
