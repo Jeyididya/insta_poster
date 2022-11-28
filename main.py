@@ -26,6 +26,7 @@ def start():
         print(file_name,_quote["quote"])
         im=EDIT_IMAGE(file_name)
         file_name_edited=im.add_text(_quote["quote"],_quote["author"])
+        os.remove(file_name)
         return file_name_edited
     else:
         start()
@@ -38,6 +39,7 @@ def post_insta(file_name):
         caption
         )
     print("photo posted",file_name)
+    os.remove(filename)
 
 times=[10,13,11,6]
 
@@ -55,11 +57,3 @@ while True:
     print("sleeping for ",sleep_time)
     sleep(int(sleep_time)*3600)
 
-get_image=GET_IMAGE()
-
-
-
-print("-->GOT",get_image.search_image("friends"))
-
-
-print(os.listdir("."))
