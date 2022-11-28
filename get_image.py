@@ -19,11 +19,14 @@ class GET_IMAGE:
     def check_image_id(self,image_id):
         file_=open("image_id.txt","r").readlines()
         for id in file_:
-            # print(id," and ",image_id)
+            print(id," and ",image_id)
             if str(image_id)==str(id).strip():
                 print("---image used")
                 return True
+        
         open("image_id.txt","a").write(str(image_id)+"\n")
+        
+
         print("found new image")
         return False
 
