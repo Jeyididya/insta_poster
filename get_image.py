@@ -21,7 +21,7 @@ class GET_IMAGE:
         for id in file_:
             # print(id," and ",image_id)
             if str(image_id)==str(id).strip():
-                # print("---image used")
+                print("---image used")
                 return True
         open("image_id.txt","a").write(str(image_id)+"\n")
         print("found new image")
@@ -42,6 +42,7 @@ class GET_IMAGE:
             # TODO check id of picture before downloading
             if not self.check_image_id(image["id"]):
                 try:
+                    print("saved file->",self.save_image(image['src']['original'],image['alt'],image["photographer"],image["avg_color"]))
                     return self.save_image(image['src']['original'],image['alt'],image["photographer"],image["avg_color"])
                 except:
                     continue
