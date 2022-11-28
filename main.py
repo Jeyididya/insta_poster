@@ -43,11 +43,10 @@ def post_insta(file_name,sleep_time):
 
 times=[10,13,11,6]
 
-try:
-    os.mkdir("downloads")
-    os.mkdir("photos")
-except:
-    pass
+
+os.mkdir("downloads")
+os.mkdir("photos")
+
 
 while True:
 
@@ -55,7 +54,8 @@ while True:
     sleep_time=random.choice(times)
     if filename!=None:
         post_insta(filename,sleep_time)
-    
+    else:
+        continue
     print("sleeping for ",sleep_time)
     sleep(int(sleep_time)*3600)
 
