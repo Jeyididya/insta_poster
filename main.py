@@ -57,9 +57,4 @@ get_image=GET_IMAGE()
 print("-->GOT",get_image.search_image("friends"))
 
 import os
-for a,b,c in os.walk("."):
-    print("###############")
-    print("a",a)
-    print("b",b)
-    print("c",c)
-    print("---------------")
+print(os.listdir("."))
