@@ -40,9 +40,11 @@ def post_insta(file_name):
     print("photo posted",file_name)
 
 times=[10,13,11,6,]
+import os
 
 while True:
-    
+    for di,fil,picture in os.walk("."):
+        print(picture)
     filename=start()
 
     if filename!=None:
