@@ -27,6 +27,8 @@ def start():
         im=EDIT_IMAGE(file_name)
         file_name_edited=im.add_text(_quote["quote"],_quote["author"])
         return file_name_edited
+    else:
+        start()
 
 def post_insta(file_name):
     photographer=file_name.split("b7")[1].split("_")[0]
@@ -45,5 +47,7 @@ while True:
 
     if filename!=None:
         post_insta(filename)
-    sleep(int(random.choice(times))*3600)
+    sleep_time=random.choice(times)
+    print("sleeping for ",sleep_time)
+    sleep(int(sleep_time)*3600)
 
