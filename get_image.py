@@ -19,10 +19,10 @@ class GET_IMAGE:
         for id in file_:
             # print(id," and ",image_id)
             if str(image_id)==str(id).strip():
-                print("---image used")
+                # print("---image used")
                 return True
         open("image_id.txt","a").write(str(image_id)+"\n")
-        print("new image")
+        print("found new image")
         return False
 
 
