@@ -42,7 +42,9 @@ def post_insta(file_name):
 times=[10,13,11,6,]
 
 while True:
-    
+    file_=open("image_id.txt","r").readlines()
+        for id in file_:
+            print("id",id)
     filename=start()
 
     if filename!=None:

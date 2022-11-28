@@ -12,7 +12,7 @@ class GET_IMAGE:
         img = Image.open(requests.get(image_url, stream = True).raw)
 
         img.save('./downloads/{} b7 {}_{}.jpg'.format(image_name,photographer,color_code))
-        for _,_,files in os.walk(".downloads/"):
+        for _,_,files in os.walk("./downloads/"):
             print("files->",files)
         return './downloads/{} b7 {}_{}.jpg'.format(image_name,photographer,color_code)
     
