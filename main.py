@@ -31,9 +31,9 @@ def start():
     else:
         start()
 
-def post_insta(file_name):
+def post_insta(file_name,sleep_time):
     photographer=file_name.split("b7")[1].split("_")[0]
-    caption="Photographer {},\nImage from Pexeles \nQuote from themotivate365".format(photographer)
+    caption="Photographer {},\nImage from Pexeles \nQuote from themotivate365\nnext post in {} hrs".format(photographer,sleep_time)
     cl.photo_upload(
         file_name, 
         caption
@@ -43,17 +43,19 @@ def post_insta(file_name):
 
 times=[10,13,11,6]
 
-os.mkdir("downloads")
-os.mkdir("photos")
-
+try:
+    os.mkdir("downloads")
+    os.mkdir("photos")
+except:
+    pass
 
 while True:
 
     filename=start()
-
-    if filename!=None:
-        post_insta(filename)
     sleep_time=random.choice(times)
+    if filename!=None:
+        post_insta(filename,sleep_time)
+    
     print("sleeping for ",sleep_time)
     sleep(int(sleep_time)*3600)
 
