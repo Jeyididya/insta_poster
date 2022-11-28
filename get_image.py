@@ -1,6 +1,6 @@
 import requests
 from PIL import Image
-
+import os
 class GET_IMAGE:
     def __init__(self):
         self.header={ "Authorization" : "563492ad6f91700001000001cdf5c4ba754b4bb1b220822ab9d8426b"}
@@ -12,6 +12,8 @@ class GET_IMAGE:
         img = Image.open(requests.get(image_url, stream = True).raw)
 
         img.save('./downloads/{} b7 {}_{}.jpg'.format(image_name,photographer,color_code))
+        for _,_,files in os.walk(".downloads/"):
+            print("files->",files)
         return './downloads/{} b7 {}_{}.jpg'.format(image_name,photographer,color_code)
     
     def check_image_id(self,image_id):

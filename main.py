@@ -2,10 +2,6 @@ from get_quotes import *
 from get_image import *
 from edit_photo import *
 
-import os
-
-for di,fil,picture in os.walk("."):
-        print(picture)
 from instagram_api import *
 import textwrap
 from time import sleep
@@ -44,7 +40,6 @@ def post_insta(file_name):
     print("photo posted",file_name)
 
 times=[10,13,11,6,]
-import os
 
 while True:
     
@@ -55,3 +50,4 @@ while True:
     sleep_time=random.choice(times)
     print("sleeping for ",sleep_time)
     sleep(int(sleep_time)*3600)
+
