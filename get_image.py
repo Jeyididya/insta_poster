@@ -1,6 +1,7 @@
 import requests
 from PIL import Image
 import os
+import logs_
 class GET_IMAGE:
     def __init__(self):
         self.header={ "Authorization" : "563492ad6f91700001000001cdf5c4ba754b4bb1b220822ab9d8426b"}
@@ -24,6 +25,7 @@ class GET_IMAGE:
         
         open("image_id.txt","a").write(str(image_id)+"\n")
         print("found new image")
+        logs_.send_message("[+]Found new image")
         return False
 
 
